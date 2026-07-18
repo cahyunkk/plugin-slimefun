@@ -1,0 +1,4 @@
+# NusaEngine Config
+engine:
+  enabled: true
+  render-mode: custom
