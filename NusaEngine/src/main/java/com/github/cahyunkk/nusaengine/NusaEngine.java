@@ -7,6 +7,7 @@ public class NusaEngine extends JavaPlugin {
     private static NusaEngine instance;
     private MobStatsManager statsManager;
     private MobAIManager aiManager;
+    private EngineResourcePack resourcePack;
 
     @Override
     public void onEnable() {
@@ -15,8 +16,11 @@ public class NusaEngine extends JavaPlugin {
 
         this.statsManager = new MobStatsManager(this);
         this.aiManager = new MobAIManager(this);
+        this.resourcePack = new EngineResourcePack(this);
 
         getLogger().info("NusaEngine v" + getDescription().getVersion() + " enabled.");
+        getLogger().info("Bedrock support: automatic resource pack generation (no manual Bedrock config needed).");
+        resourcePack.generate();
         if (getServer().getPluginManager().getPlugin("NusaMobs") != null) {
             getLogger().info("NusaMobs detected — engine integration active.");
         }
@@ -37,5 +41,9 @@ public class NusaEngine extends JavaPlugin {
 
     public MobAIManager getAIManager() {
         return aiManager;
+    }
+
+    public EngineResourcePack getResourcePack() {
+        return resourcePack;
     }
 }

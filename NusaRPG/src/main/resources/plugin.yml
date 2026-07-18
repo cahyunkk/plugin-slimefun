@@ -2,8 +2,8 @@ name: NusaRPG
 version: '1.0.0'
 main: com.github.cahyunkk.nusarpg.NusaRPG
 api-version: '1.21'
-softdepend: [NusaItems, NusaMobs, NusaSkills]
-description: Plugin RPG server — class/job, stats pemain, level, skill tree, integrasi NusaItems & NusaSkills.
+softdepend: [NusaItems, NusaMobs, NusaSkills, ItemsAdder, Oraxen]
+description: Plugin RPG server — Java & Bedrock. Class/job, stats pemain, level, skill tree (tanpa config manual Bedrock; resource pack otomatis via Java config).
 website: https://github.com/cahyunkk/plugin-slimefun
 
 commands:
