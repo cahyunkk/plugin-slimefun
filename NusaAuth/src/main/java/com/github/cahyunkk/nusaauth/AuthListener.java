@@ -14,8 +14,12 @@ public class AuthListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        plugin.getAuthManager().login(event.getPlayer().getUniqueId());
-        event.getPlayer().sendMessage("§6[NusaAuth] §eAutentikasi berhasil. Selamat datang!");
+        if (plugin.getConfig().getBoolean("auth.require-login", true)) {
+            plugin.getAuthManager().login(event.getPlayer().getUniqueId());
+            event.getPlayer().sendMessage("§6[NusaAuth] §eAutentikasi berhasil. Selamat datang!");
+        } else {
+            event.getPlayer().sendMessage("§6[NusaAuth] §7Login opsional (require-login: false).");
+        }
         event.getPlayer().sendMessage("§7Java & Bedrock compatible — tanpa config manual Bedrock.");
     }
 }
