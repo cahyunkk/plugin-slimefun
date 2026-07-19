@@ -14,12 +14,33 @@ public class AuthListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        if (plugin.getConfig().getBoolean("auth.require-login", true)) {
-            plugin.getAuthManager().login(event.getPlayer().getUniqueId());
-            event.getPlayer().sendMessage("§6[NusaAuth] §eAutentikasi berhasil. Selamat datang!");
-        } else {
-            event.getPlayer().sendMessage("§6[NusaAuth] §7Login opsional (require-login: false).");
+        var player = event.getPlayer();
+        var uuid = player.getUniqueId();
+        var auth = plugin.getAuthManager();
+
+        // Anti-bot check
+        if (!auth.checkAntiBot(uuid)) {
+            player.sendMessage("§6[NusaAuth] §cBot terdeteksi! Login diblokir.");
+            return;
         }
-        event.getPlayer().sendMessage("§7Java & Bedrock compatible — tanpa config manual Bedrock.");
+
+        boolean requireLogin = plugin.getConfig().getBoolean("auth.require-login", true);
+
+        if (!auth.isRegistered(uuid)) {
+            player.sendMessage("§6[NusaAuth] §eSelamat datang! Gunakan /nusaauth register <password> untuk mendaftar.");
+            if (requireLogin) {
+                player.sendMessage("§cLogin wajib aktif. Silakan register dan login.");
+            }
+            return;
+        }
+
+        if (!auth.isLoggedIn(uuid)) {
+            player.sendMessage("§6[NusaAuth] §eAkun terdaftar. Gunakan /nusaauth login <password> untuk masuk.");
+            if (requireLogin) {
+                player.sendMessage("§cSilakan login untuk melanjutkan.");
+            }
+        } else {
+            player.sendMessage("§6[NusaAuth] §eAutentikasi berhasil. Selamat datang!");
+        }
     }
 }

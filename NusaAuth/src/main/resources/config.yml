@@ -3,3 +3,7 @@
 auth:
   session-timeout: 3600
   require-login: true
+anti-bot:
+  enabled: false
+  check-name-length: true
+  block-patterns: ["_bot", "bot"]
