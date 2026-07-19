@@ -1,3 +1,6 @@
+# NusaItems Config — seperti Oraxen
+# Model/texture + stats diatur hanya via file Java ini (tanpa config manual Bedrock).
+# Player Bedrock akan melihat model langsung karena resource pack otomatis.
 resource-pack:
   auto-generate: true
   built-in-server:
