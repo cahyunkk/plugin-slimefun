@@ -58,6 +58,11 @@ Repo: `https://github.com/cahyunkk/plugin-slimefun.git`
 Branch: `main`
 Deploy: `SSH deploy key` (private key aman, tidak dikirim melalui chat)
 
+## Download & Search
+
+- [Download semua plugin Nusa](downloads/README.md)
+- [Search plugin (HTML)](downloads/search.html)
+
 ### Catatan Keamanan
 - Private deploy key (`~/.ssh/nusa_deploy_key`) disimpan lokal dengan permission `600`
 - Tidak pernah dikirim melalui chat atau log publik

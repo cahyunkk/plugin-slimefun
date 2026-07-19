@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Plugin Nusa</title>
+<style>
+body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; background: #f5f5f5; }
+h1 { color: #2c3e50; }
+input[type="text"] { width: 100%; padding: 12px; font-size: 16px; border: 2px solid #3498db; border-radius: 8px; }
+.plugin-card { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 20px; margin: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.plugin-card h3 { margin: 0 0 10px; color: #3498db; }
+.plugin-card a { display: inline-block; padding: 8px 16px; background: #3498db; color: #fff; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+.hidden { display: none; }
+</style>
+</head>
+<body>
+<h1>🔍 Search Plugin Nusa</h1>
+<input type="text" id="searchInput" placeholder="Ketik nama plugin... (misal: auth, rpg, engine)" onkeyup="filterPlugins()">
+
+<div id="results">
+<div class="plugin-card" data-name="nusa items custom item resource pack oraxen">
+<h3>NusaItems</h3>
+<p>Custom item + resource pack otomatis. Seperti Oraxen. Java & Bedrock.</p>
+<a href="../release/NusaItems-1.0.0.jar">Download .jar</a>
+</div>
+
+<div class="plugin-card" data-name="nusa mobs custom mob stats ai">
+<h3>NusaMobs</h3>
+<p>Custom mob + stats/AI. Integrasi dengan semua plugin Nusa.</p>
+<a href="../release/NusaMobs-1.0.0.jar">Download .jar</a>
+</div>
+
+<div class="plugin-card" data-name="nusa skills skill ability pemain">
+<h3>NusaSkills</h3>
+<p>Skill/ability pemain. Integrasi RPG, Engine, Auth.</p>
+<a href="../release/NusaSkills-1.0.0.jar">Download .jar</a>
+</div>
+
+<div class="plugin-card" data-name="nusa engine engine stats ai model renderer">
+<h3>NusaEngine</h3>
+<p>Engine stats/AI + model renderer. Resource pack otomatis.</p>
+<a href="../release/NusaEngine-1.0.0.jar">Download .jar</a>
+</div>
+
+<div class="plugin-card" data-name="nusa rpg rpg server class job level stats">
+<h3>NusaRPG</h3>
+<p>RPG server (class/job/stats/level). Terhubung Skill, Auth, Engine.</p>
+<a href="../release/NusaRPG-1.0.0.jar">Download .jar</a>
+</div>
+
+<div class="plugin-card" data-name="nusa auth auth autentikasi login register pw anti bot">
+<h3>NusaAuth</h3>
+<p>Autentikasi (register/login pw) + anti-bot. Integrasi semua Nusa.</p>
+<a href="../release/NusaAuth-1.0.0.jar">Download .jar</a>
+</div>
+
+<div class="plugin-card" data-name="nusa optimize anti lag gc entity chunk">
+<h3>NusaOptimize</h3>
+<p>Anti-lag (GC otomatis, entity limit, chunk optimize).</p>
+<a href="../release/NusaOptimize-1.0.0.jar">Download .jar</a>
+</div>
+</div>
+
+<script>
+function filterPlugins() {
+  var query = document.getElementById("searchInput").value.toLowerCase();
+  var cards = document.querySelectorAll(".plugin-card");
+  cards.forEach(function(card) {
+    var text = card.getAttribute("data-name").toLowerCase();
+    if (text.includes(query)) {
+      card.classList.remove("hidden");
+    } else {
+      card.classList.add("hidden");
+    }
+  });
+}
+</script>
+</body>
+</html>
