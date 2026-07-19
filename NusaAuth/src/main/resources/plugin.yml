@@ -9,6 +9,7 @@ website: https://github.com/cahyunkk/plugin-slimefun
 commands:
   nusaauth:
     description: Auth control
+    aliases: [na, auth]
 permissions:
   nusaauth.admin:
     default: op
