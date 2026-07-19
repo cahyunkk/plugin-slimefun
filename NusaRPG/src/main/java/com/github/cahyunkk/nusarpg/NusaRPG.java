@@ -25,6 +25,18 @@ public class NusaRPG extends JavaPlugin {
         if (getServer().getPluginManager().getPlugin("NusaSkills") != null) {
             getLogger().info("NusaSkills integration active.");
         }
+        if (getServer().getPluginManager().getPlugin("NusaMobs") != null) {
+            getLogger().info("NusaMobs integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaEngine") != null) {
+            getLogger().info("NusaEngine integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaAuth") != null) {
+            getLogger().info("NusaAuth integration active — auth required for RPG login.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaOptimize") != null) {
+            getLogger().info("NusaOptimize integration active.");
+        }
 
         getLogger().info("NusaRPG v" + getDescription().getVersion() + " enabled.");
     }

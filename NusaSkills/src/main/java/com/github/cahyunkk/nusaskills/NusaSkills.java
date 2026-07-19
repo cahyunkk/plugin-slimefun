@@ -24,6 +24,12 @@ public class NusaSkills extends JavaPlugin {
         if (Bukkit.getPluginManager().getPlugin("NusaMobs") != null) {
             getLogger().info("[NusaSkills] NusaMobs detected — integration active.");
         }
+        if (Bukkit.getPluginManager().getPlugin("NusaRPG") != null) {
+            getLogger().info("[NusaSkills] NusaRPG detected — skill integration active.");
+        }
+        if (Bukkit.getPluginManager().getPlugin("NusaEngine") != null) {
+            getLogger().info("[NusaSkills] NusaEngine detected — engine integration active.");
+        }
 
         getLogger().info("NusaSkills v" + getDescription().getVersion() + " enabled.");
     }

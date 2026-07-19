@@ -35,6 +35,25 @@ public final class NusaMobs extends JavaPlugin {
 
         getLogger().info("§a✅ NusaMobs loaded! " + mobManager.getMobCount() + " mobs, "
                 + (nusaBridge.isAvailable() ? "§2NusaItems linked" : "§7NusaItems not found"));
+        // Integrasi semua plugin Nusa
+        if (getServer().getPluginManager().getPlugin("NusaItems") != null) {
+            getLogger().info("[NusaMobs] NusaItems integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaSkills") != null) {
+            getLogger().info("[NusaMobs] NusaSkills integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaEngine") != null) {
+            getLogger().info("[NusaMobs] NusaEngine integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaRPG") != null) {
+            getLogger().info("[NusaMobs] NusaRPG integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaAuth") != null) {
+            getLogger().info("[NusaMobs] NusaAuth integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaOptimize") != null) {
+            getLogger().info("[NusaMobs] NusaOptimize integration active.");
+        }
     }
 
     @Override

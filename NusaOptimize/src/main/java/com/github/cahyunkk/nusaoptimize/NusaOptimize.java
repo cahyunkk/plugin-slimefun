@@ -19,6 +19,18 @@ public class NusaOptimize extends JavaPlugin {
         getLogger().info("NusaOptimize v" + getDescription().getVersion() + " enabled.");
         getLogger().info("Anti-lag: automatic entity & chunk optimization active.");
         getLogger().info("Bedrock support: automatic resource pack (no manual config needed).");
+        if (getServer().getPluginManager().getPlugin("NusaEngine") != null) {
+            getLogger().info("NusaEngine integration active — engine optimization.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaSkills") != null) {
+            getLogger().info("NusaSkills integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaRPG") != null) {
+            getLogger().info("NusaRPG integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaMobs") != null) {
+            getLogger().info("NusaMobs integration active.");
+        }
     }
 
     @Override

@@ -32,6 +32,25 @@ public final class NusaItems extends JavaPlugin {
         getLogger().info("§a✅ NusaItems v" + getPluginMeta().getVersion() + " loaded! "
                 + itemRegistry.getItemCount() + " items | pack " + (packServer.isRunning() ? "§2ON" : "§cOFF")
                 + " | hooks: " + hookManager.getEnabledHookCount());
+        // Integrasi dengan semua plugin Nusa
+        if (getServer().getPluginManager().getPlugin("NusaMobs") != null) {
+            getLogger().info("[NusaItems] NusaMobs integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaSkills") != null) {
+            getLogger().info("[NusaItems] NusaSkills integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaEngine") != null) {
+            getLogger().info("[NusaItems] NusaEngine integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaRPG") != null) {
+            getLogger().info("[NusaItems] NusaRPG integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaAuth") != null) {
+            getLogger().info("[NusaItems] NusaAuth integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaOptimize") != null) {
+            getLogger().info("[NusaItems] NusaOptimize integration active.");
+        }
     }
 
     @Override

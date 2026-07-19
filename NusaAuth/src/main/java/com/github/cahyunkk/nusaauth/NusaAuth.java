@@ -19,6 +19,21 @@ public class NusaAuth extends JavaPlugin {
         getLogger().info("NusaAuth v" + getDescription().getVersion() + " enabled.");
         getLogger().info("Auth: automatic session tracking.");
         getLogger().info("Bedrock support: automatic resource pack (no manual config needed).");
+        if (getServer().getPluginManager().getPlugin("NusaRPG") != null) {
+            getLogger().info("NusaRPG integration active — auth required for RPG.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaSkills") != null) {
+            getLogger().info("NusaSkills integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaItems") != null) {
+            getLogger().info("NusaItems integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaMobs") != null) {
+            getLogger().info("NusaMobs integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaEngine") != null) {
+            getLogger().info("NusaEngine integration active.");
+        }
     }
 
     @Override

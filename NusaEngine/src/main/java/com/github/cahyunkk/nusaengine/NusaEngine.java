@@ -24,6 +24,15 @@ public class NusaEngine extends JavaPlugin {
         if (getServer().getPluginManager().getPlugin("NusaMobs") != null) {
             getLogger().info("NusaMobs detected — engine integration active.");
         }
+        if (getServer().getPluginManager().getPlugin("NusaSkills") != null) {
+            getLogger().info("NusaSkills detected — skill engine active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaRPG") != null) {
+            getLogger().info("NusaRPG detected — RPG engine integration active.");
+        }
+        if (getServer().getPluginManager().getPlugin("NusaOptimize") != null) {
+            getLogger().info("NusaOptimize detected — optimization engine active.");
+        }
     }
 
     @Override
